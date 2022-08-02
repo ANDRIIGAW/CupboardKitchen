@@ -1,9 +1,9 @@
-from crypt import methods
-from flask import Flask, render_template, request, redirect, url_for, flash, make_response, jsonify, session
+from flask import Flask, render_template, request
 import sqlite3 as sql
 from datetime import datetime
 import os
 
+# https://github.com/ANDRIIGAW/CupboardKitchen
 
 
 now = datetime.now()
@@ -54,6 +54,10 @@ def answer(*args):
         long = request.form.get("long")
         dising_number = request.form.get("dising_number")
         bools = request.form.get("bools")
+        check_list = [name, phone, furniture, height, long, dising_number, bools]
+        check_list = check(check_list)
+        if check_list != True:
+            return render_template("check.html")
         con = sql.connect("cupbkitch.db")
         cur = con.cursor()
         if bools != "yes":
@@ -87,6 +91,18 @@ def answer(*args):
                                     price_furnitur=price_furnitur)
     return render_template("index.html")
 
+@app.route("/check")
+def check_page():
+    return render_template("check.html")
+
+def check(s):
+    item  = s
+    for j in item:
+        if j in ["-", "--", " ", "", "-", "_", "__", "?", "~q", "%", "~p", "#", "~h", "/", "~s", "\"", "''"]:
+            return False
+        else:
+            return True
+    
 
 
 if __name__ == "__main__":

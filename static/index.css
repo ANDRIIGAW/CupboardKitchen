@@ -27,11 +27,11 @@ body {
     font-size: 12px;
     line-height: 15x;
     background-color: #a8a8a8;
-    padding: 100px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-left: 100;
-    margin-right: 100;
+    padding: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50;
+    margin-right: 50;
 }
 .word {
     color: #FB6D3A;
@@ -40,8 +40,8 @@ body {
 }
 
 .creatdb {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     margin-left: 100;
     margin-right: 100;
 
