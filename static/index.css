@@ -1,0 +1,56 @@
+body {
+    background-color: #221f32;
+    margin-bottom: 50px;
+    /* background-image:  url ("kitch3.jpg"); */
+}
+   
+.order {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.rgb {
+    background-color: #a8a8a8;
+}
+
+
+.photo {
+    width: 370px;
+    margin-bottom: 50px;
+    padding: 0;
+}
+
+.about_us{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15x;
+    background-color: #a8a8a8;
+    padding: 100px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 100;
+    margin-right: 100;
+}
+.word {
+    color: #FB6D3A;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.creatdb {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 100;
+    margin-right: 100;
+
+}
+
+.ansver {
+    background-color: #221f32;
+    margin-bottom: 50px;
+    padding: 100px;
+    margin-left: 100;
+    margin-right: 100;
+}
