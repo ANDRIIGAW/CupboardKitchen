@@ -14,10 +14,10 @@ sql ='''CREATE TABLE IF NOT EXISTS "orders" (
         ID INTEGER PRIMARY KEY AUTOINCREMENT, 
         name TEXT,
         phone TEXT ,
-        furniture INTEGER, 
+        furniture NUMERIC, 
         height FLOAT, 
         long FLOAT, 
-        dising_number INTEGER,
+        dising_number NUMERIC,
         bools TEXT,
         price_furnitur FLOAT,
         date datetime
