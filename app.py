@@ -7,13 +7,13 @@ import os
 # https://youtu.be/TN_9Q3Q5ang
 
 
-
 now = datetime.now()
 
 PEOPLE_FOLDER = os.path.join('static', 'images')
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = PEOPLE_FOLDER
+
 
 @app.route("/")
 def index():
@@ -56,56 +56,57 @@ def answer(*args):
         long = request.form.get("long")
         dising_number = request.form.get("dising_number")
         bools = request.form.get("bools")
-        check_list_input = [name, phone, furniture, height, long, dising_number, bools]
+        check_list_input = [name, phone, furniture,
+                            height, long, dising_number, bools]
         check_list_output = check(check_list_input)
-        if check_list_output != True or len(phone)<10 or any(map(str.isdigit, phone)) != True:
+        if check_list_output != True or len(phone) < 10 or any(map(str.isdigit, phone)) != True:
             return render_template("check.html")
         con = sql.connect("cupbkitch.db")
         cur = con.cursor()
         if bools != "yes":
             price_furnitur = round(float(height)/10 * float(long) * 100000)
-            # price_furnitur = 1
             cur.execute("INSERT INTO orders (name, phone, furniture, height, long, dising_number, bools, price_furnitur,  date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);",
                         (name, phone, furniture, height, long, dising_number, bools, price_furnitur, now))
             return render_template("answer.html",
-                                    name=name,
-                                    phone=phone, 
-                                    furniture=furniture,
-                                    height=height,
-                                    long=long,
-                                    dising_number=dising_number,
-                                    bools="НІ",
-                                    price_furnitur=price_furnitur)
+                                   name=name,
+                                   phone=phone,
+                                   furniture=furniture,
+                                   height=height,
+                                   long=long,
+                                   dising_number=dising_number,
+                                   bools="НІ",
+                                   price_furnitur=price_furnitur)
 
         else:
-            # price_furnitur = 2
-            price_furnitur = round(float(height)/10 * float(long) * 100000 * 1.3)
+            price_furnitur = round(
+                float(height)/10 * float(long) * 100000 * 1.3)
             cur.execute("INSERT INTO orders (name, phone, furniture, height, long, dising_number, bools, price_furnitur,  date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);",
                         (name, phone, furniture, height, long, dising_number, bools, price_furnitur, now))
             return render_template("answer.html",
-                                    name=name,
-                                    phone=phone, 
-                                    furniture=furniture,
-                                    height=height,
-                                    long=long,
-                                    dising_number=dising_number,
-                                    bools="ТАК",
-                                    price_furnitur=price_furnitur)
+                                   name=name,
+                                   phone=phone,
+                                   furniture=furniture,
+                                   height=height,
+                                   long=long,
+                                   dising_number=dising_number,
+                                   bools="ТАК",
+                                   price_furnitur=price_furnitur)
     return render_template("index.html")
+
 
 @app.route("/check")
 def check_page():
     return render_template("check.html")
 
+
 def check(s):
-    item  = s
+    item = s
     for j in item:
         if j in ["-", "--", " ", "", "-", "_", "__", "?", "~q", "%", "~p", "#", "~h", "/", "~s", "\"", "''", None]:
             return False
         else:
             return True
 
-    
 
 if __name__ == "__main__":
     app.run(debug=True)
