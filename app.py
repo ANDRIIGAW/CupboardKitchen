@@ -4,6 +4,8 @@ from datetime import datetime
 import os
 
 # https://github.com/ANDRIIGAW/CupboardKitchen
+# https://youtu.be/TN_9Q3Q5ang
+
 
 
 now = datetime.now()
@@ -54,9 +56,9 @@ def answer(*args):
         long = request.form.get("long")
         dising_number = request.form.get("dising_number")
         bools = request.form.get("bools")
-        check_list = [name, phone, furniture, height, long, dising_number, bools]
-        check_list = check(check_list)
-        if check_list != True:
+        check_list_input = [name, phone, furniture, height, long, dising_number, bools]
+        check_list_output = check(check_list_input)
+        if check_list_output != True or len(phone)<10 or any(map(str.isdigit, phone)) != True:
             return render_template("check.html")
         con = sql.connect("cupbkitch.db")
         cur = con.cursor()
@@ -98,12 +100,12 @@ def check_page():
 def check(s):
     item  = s
     for j in item:
-        if j in ["-", "--", " ", "", "-", "_", "__", "?", "~q", "%", "~p", "#", "~h", "/", "~s", "\"", "''"]:
+        if j in ["-", "--", " ", "", "-", "_", "__", "?", "~q", "%", "~p", "#", "~h", "/", "~s", "\"", "''", None]:
             return False
         else:
             return True
-    
 
+    
 
 if __name__ == "__main__":
     app.run(debug=True)
