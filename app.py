@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 import sqlite3 as sql
 from datetime import datetime
 import os
@@ -61,12 +61,16 @@ def answer(*args):
         check_list_output = check(check_list_input)
         if check_list_output != True or len(phone) < 10 or any(map(str.isdigit, phone)) != True:
             return render_template("check.html")
+
         con = sql.connect("cupbkitch.db")
         cur = con.cursor()
+        
         if bools != "yes":
             price_furnitur = round(float(height)/10 * float(long) * 100000)
             cur.execute("INSERT INTO orders (name, phone, furniture, height, long, dising_number, bools, price_furnitur,  date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);",
                         (name, phone, furniture, height, long, dising_number, bools, price_furnitur, now))
+            con.commit()
+            flash('Order Updated','success')
             return render_template("answer.html",
                                    name=name,
                                    phone=phone,
@@ -75,13 +79,16 @@ def answer(*args):
                                    long=long,
                                    dising_number=dising_number,
                                    bools="НІ",
-                                   price_furnitur=price_furnitur)
+                                   price_furnitur=price_furnitur
+                                   )
 
         else:
             price_furnitur = round(
                 float(height)/10 * float(long) * 100000 * 1.3)
             cur.execute("INSERT INTO orders (name, phone, furniture, height, long, dising_number, bools, price_furnitur,  date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);",
                         (name, phone, furniture, height, long, dising_number, bools, price_furnitur, now))
+            con.commit()
+            flash('Order Updated','success')
             return render_template("answer.html",
                                    name=name,
                                    phone=phone,
@@ -94,9 +101,14 @@ def answer(*args):
     return render_template("index.html")
 
 
-@app.route("/check")
-def check_page():
-    return render_template("check.html")
+@app.route("/check_db")
+def check_db():
+    con=sql.connect("cupbkitch.db")
+    con.row_factory=sql.Row
+    cur=con.cursor()
+    cur.execute("select * from orders")
+    data=cur.fetchall()
+    return render_template("check_db.html",datas=data)
 
 
 def check(s):
@@ -109,4 +121,5 @@ def check(s):
 
 
 if __name__ == "__main__":
+    app.secret_key = 'super secret key'
     app.run(debug=True)
