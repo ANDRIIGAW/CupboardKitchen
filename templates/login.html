@@ -5,16 +5,17 @@
     <!-- форматируем код - Alt+Shift+F razmer width="400"-->
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Cupboards&Kitchen</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="/static/index.css">
     <link rel="shortcut icon" href="/static/images/kitchen.svg" type="image/x-icon">
-    <title>Create</title>
 </head>
 
-<body class="card-header ansver">
+<body>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container rgb">
             <a class="navbar-brand" href="/"><b>Шафи & Кухні</b>
@@ -26,28 +27,38 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
-                    <div class="navbar-nav ">
+                    <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="/">Головна</a>
-                        <a class="nav-link" href="/">Розрахувати</a>
-                        <a class="nav-link order"><span class="material-symbols-outlined">
+                        <!-- <a class="nav-link" href="#cupboard">Шафи</a>
+                    <a class="nav-link" href="#kitchens">Кухні</a>
+                    <a class="nav-link" href="#сontacts">Контакти</a>
+                    <a class="nav-link" href="#price">Розрахувати</a> -->
+                        <!-- <a class="nav-link order" href="/check_db"><span class="material-symbols-outlined"> 
+                    shopping_cart_checkout
+                 </span>Всі запити</a> -->
+                        <a class="nav-link" href="/login">Login</a>
                     </div>
                 </div>
             </b>
         </div>
     </nav>
-
-    <div class="about_us  w-100 mx-auto">
-        <h3>Дякуємо за ваше звернення</h3>
-        <h5>
-            Але будьласочка, заповніть поля коректно
-            <h1 class="creatdb">
-                Початкова вартість вашого виробу буде обов'язково poзрахована!
-            </h1>
-            <h1>
-                <b class="word creatdb">Спробуйте ще раз)))</b>
-            </h1>
-    </div>
-
+    <h2 class="word text-center">Введіть Ваш імейл та пароль</h2>
+    <form action="/login" method="post" class="container about_us ">
+        <div class="mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input name="email" type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input name="password" type="password" class="form-control" id="inputPassword2" placeholder="Password"
+                    required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary ">Увійти</button>
+    </form>
 </body>
 
 </html>

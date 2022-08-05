@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, redirect
+from werkzeug.security import check_password_hash, generate_password_hash, check_password_hash
 import sqlite3 as sql
 from datetime import datetime
 import os
@@ -118,6 +119,48 @@ def check(s):
             return False
         else:
             return True
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    """Log user in"""
+
+
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+
+        # Query database for username
+        con=sql.connect("cupbkitch.db")
+        con.row_factory=sql.Row
+        cur=con.cursor()
+        cur.execute("select * from users")
+        data=cur.fetchall()
+
+        # Ensure username was submitted and password was submitted
+        if not email or not password:
+            return render_template("check.html")
+
+        elif  email == data[0]["name"] and password == data[0]["password"]:
+           flash(f"Welcome!")
+            # Redirect user to home page
+           return redirect("/lyout")
+        return render_template("login2.html")
+
+    # User reached route via GET (as by clicking a link or via redirect)
+    else:
+        return render_template("login.html")
+    # else:
+    #     return render_template("register.html") 
+
+@app.route("/lyout")
+def lyout():
+    return render_template("lyout.html")
+
+
+@app.route("/register")
+def register():
+    return render_template("register.html")
 
 
 if __name__ == "__main__":
