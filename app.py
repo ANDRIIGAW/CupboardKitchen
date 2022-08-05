@@ -153,9 +153,9 @@ def login():
     # else:
     #     return render_template("register.html") 
 
-@app.route("/lyout")
+@app.route("/layout")
 def lyout():
-    return render_template("lyout.html")
+    return render_template("layout.html")
 
 
 @app.route("/register")
