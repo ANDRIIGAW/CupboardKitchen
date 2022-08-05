@@ -67,7 +67,7 @@ def answer(*args):
         cur = con.cursor()
         
         if bools != "yes":
-            price_furnitur = round(float(height)/10 * float(long) * 100000)
+            price_furnitur = round(float(height)/10 * float(long) * 120000)
             cur.execute("INSERT INTO orders (name, phone, furniture, height, long, dising_number, bools, price_furnitur,  date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);",
                         (name, phone, furniture, height, long, dising_number, bools, price_furnitur, now))
             con.commit()
@@ -85,7 +85,7 @@ def answer(*args):
 
         else:
             price_furnitur = round(
-                float(height)/10 * float(long) * 100000 * 1.3)
+                float(height)/10 * float(long) * 120000 * 1.3)
             cur.execute("INSERT INTO orders (name, phone, furniture, height, long, dising_number, bools, price_furnitur,  date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);",
                         (name, phone, furniture, height, long, dising_number, bools, price_furnitur, now))
             con.commit()
@@ -144,7 +144,7 @@ def login():
         elif  email == data[0]["name"] and password == data[0]["password"]:
            flash(f"Welcome!")
             # Redirect user to home page
-           return redirect("/lyout")
+           return redirect("/layout")
         return render_template("login2.html")
 
     # User reached route via GET (as by clicking a link or via redirect)
@@ -153,13 +153,17 @@ def login():
     # else:
     #     return render_template("register.html") 
 
-@app.route("/lyout")
-def lyout():
-    return render_template("lyout.html")
+@app.route("/layout", methods=["GET", "POST"])
+def layout():
+    if request.method == 'POST':
+        return render_template("register.html")
+    return render_template("layout.html")
 
 
-@app.route("/register")
+@app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == 'POST':
+        return render_template("layout.html")
     return render_template("register.html")
 
 
