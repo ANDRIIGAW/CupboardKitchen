@@ -4,6 +4,12 @@ body {
     /* background-image:  url ("kitch3.jpg"); */
 }
    
+header{
+    position:sticky;
+    top:0px;
+    z-index:1000;
+    padding: 1px;
+}
 .order {
     display: flex;
     align-items: center;
@@ -29,9 +35,7 @@ body {
     background-color: #a8a8a8;
     padding: 50px;
     margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 50;
-    margin-right: 50;
+   
 }
 .word {
     color: #FB6D3A;

@@ -144,7 +144,7 @@ def login():
         elif  email == data[0]["name"] and password == data[0]["password"]:
            flash(f"Welcome!")
             # Redirect user to home page
-           return redirect("/lyout")
+           return redirect("/layout")
         return render_template("login2.html")
 
     # User reached route via GET (as by clicking a link or via redirect)
