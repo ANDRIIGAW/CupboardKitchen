@@ -23,59 +23,468 @@
                 <a class="navbar-brand" href="/"><b>Шафи & Кухні</b>
                     <p><i>індивідульні замовлення</i></p>
                 </a>
-                <b>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbar">
-                        <div class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" href="/">Головна</a>
-                            <!-- <a class="nav-link" href="#cupboard">Шафи</a>
-                            <a class="nav-link" href="#kitchens">Кухні</a>
-                            <a class="nav-link" href="#сontacts">Контакти</a>
-                            <a class="nav-link" href="#price">Розрахувати</a> -->
-                            <a class="nav-link order" href="/check_db"><span class="material-symbols-outlined">
-                                    shopping_cart_checkout
-                                </span>Усі запити</a>
-                            <a class="nav-link" href="/login">Login</a>
-                            <a class="nav-link" href="/register">Register</a>
-                        </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="/">Головна</a>
+                        <a class="nav-link" href="#cupboard">Шафи</a>
+                        <a class="nav-link" href="#kitchens">Кухні</a>
+                        <a class="nav-link" href="#сontacts">Контакти</a>
+                        <a class="nav-link" href="#price">Розрахувати</a>
+                        <!-- <a class="nav-link order" href="/check"><span class="material-symbols-outlined"> 
+                        shopping_cart_checkout
+                     </span>Додати дизайн</a> -->
                     </div>
-                </b>
+                </div>
             </div>
         </nav>
-
-
-        <footer>
-            <div class="card text-center about_us card-header">
-                <h2 id="сontacts">Ми чекаємо на Вас :)</h2>
-                <div class="card-header">
-                    <h3>Наші зусилля забезпечують ваш комфорт!</h3>
+        <!-- Карусель -->
+        <div id="carousel-furnitur" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carousel-furnitur" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carousel-furnitur" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carousel-furnitur" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carousel-furnitur" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ user_image1 }}" class="d-block w-50 mx-auto" alt="Кухня 1">
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">Україна, м. Київ, бульвар Вацлава Гавела, б. 16</h5>
-                    <h5 class="card-title">Мобільний: +380734728399</h5>
-                    <h5 class="card-title"> Телеграм: <a href="https://t.me/Andrii_Haponov">@Andrii_Haponov</h5>
+                <div class="carousel-item">
+                    <img src="{{ user_image7 }}" class="d-block w-50 mx-auto" alt="Кухня 2">
                 </div>
-
-
-                <div>
-                    <a href="/" class="btn btn-primary">Що там на головній сторінці</a>
+                <div class="carousel-item">
+                    <img src="{{ user_image2 }}" class="d-block w-50 mx-auto" alt="Шкафи 1">
                 </div>
-                <video w-50 mx-auto controls class="about_us">
-                    <source src=" static/images/Videokitch.mp4" type="video/mp4">
-                </video lass="card text-center about_us card-header">
-                <source src=" static/images/Videokitch.mp4" type="video/mp4">
-                </video>
-                <div class="card-footer text-muted">
-                    &#x24b8; 2022 August
+                <div class="carousel-item">
+                    <img src="{{ user_image6 }}" class="d-block w-50 mx-auto" alt="Шкафи 2">
                 </div>
             </div>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-            crossorigin="anonymous"></script>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-furnitur"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-furnitur"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- хто ми -->
+        <div class="about_us">
+            <h2>Кілька слів - хто ми:</h2>
+            <h5>
+                <p>Ми з України!</p> І працюємо з 2007 року, дотримуючись найвищих стандартів. За цей час у нас
+                сформувалася значна база
+                знань, і ми, як Виробник меблів, продовжуємо щодня удосконалювати свої методи своєї роботи. Ми відкриті
+                безлічі місцевих та міжнародних компаній з
+                широким асортиментом інноваційної продукції, створеної у точній відповідності до технологічного процесу.
+            </h5>
+        </div>
+    </header>
+    <!-- Кухня -->
+    <main class="container">
+        <h2 id="kitchens" class="word">Кухні</h2>
+
+        <div class="cupboard-conteiner row">
+            <!-- к1 -->
+            <article class="card col-12 col-sm-6 col-md-4 col-lg-3">
+                <img src="{{ user_image1 }}" class="card-img-top" alt="Кухня 1">
+                <div class="card-body">
+                    <h5 class="card-title">Кухня 1</h5>
+                    <p class="card-text">Даний зразок є в доступі для замвлоняя.</p>
+                    <a href="#" class="btn btn-info" data-bs-toggle="modal"
+                        data-bs-target="#prodact-info-modal1">Інформація</a>
+                    <a href="#price" class="btn btn-primary">Розрахувати</a>
+                </div>
+            </article>
+            <!-- к2 -->
+            <article class="card col-12 col-sm-6 col-md-4 col-lg-3">
+                <img src="{{ user_image2 }}" class="card-img-top" alt="Кухня 2">
+                <div class="card-body">
+                    <h5 class="card-title">Кухня 2</h5>
+                    <p class="card-text">Даний зразок є в доступі для замвлоняя.</p>
+                    <a href="#" class="btn btn-info" data-bs-toggle="modal"
+                        data-bs-target="#prodact-info-modal2">Інформація</a>
+                    <a href="#price" class="btn btn-primary">Розрахувати</a>
+                </div>
+            </article>
+            <!-- к3 -->
+            <article class="card col-12 col-sm-6 col-md-4 col-lg-3">
+                <img src="{{ user_image3 }}" class="card-img-top" alt="Кухня 3">
+                <div class="card-body">
+                    <h5 class="card-title">Кухня 3</h5>
+                    <p class="card-text">Даний зразок є в доступі для замвлоняя.</p>
+                    <a href="#" class="btn btn-info" data-bs-toggle="modal"
+                        data-bs-target="#prodact-info-modal3">Інформація</a>
+                    <a href="#price" class="btn btn-primary">Розрахувати</a>
+                </div>
+            </article>
+            <!-- к4 -->
+            <article class="card col-12 col-sm-6 col-md-4 col-lg-3">
+                <img src="{{ user_image4 }}" class="card-img-top" alt="Кухня 4">
+                <div class="card-body">
+                    <h5 class="card-title">Кухня 3</h5>
+                    <p class="card-text">Даний зразок є в доступі для замвлоняя.</p>
+                    <a href="#" class="btn btn-info" data-bs-toggle="modal"
+                        data-bs-target="#prodact-info-modal4">Інформація</a>
+                    <a href="#price" class="btn btn-primary">Розрахувати</a>
+                </div>
+            </article>
+
+
+            <!-- Cupboards -->
+            <h2 id="cupboard" class="word">Шафи</h2>
+            <!-- ш1 -->
+            <article class="card col-12 col-sm-6 col-md-4 col-lg-3">
+                <img src="{{ user_image5 }}" class="card-img-top" alt="Шафа 1">
+                <div class="card-body">
+                    <h5 class="card-title">Шафа 1</h5>
+                    <p class="card-text">Даний зразок є в доступі для замвлоняя.</p>
+                    <a href="#" class="btn btn-info" data-bs-toggle="modal"
+                        data-bs-target="#prodact-info-modal5">Інформація</a>
+                    <a href="#price" class="btn btn-primary">Розрахувати</a>
+                </div>
+            </article>
+            <!-- ш2 -->
+            <article class="card col-12 col-sm-6 col-md-4 col-lg-3">
+                <img src="{{ user_image6 }}" class="card-img-top" alt="Шафа 2">
+                <div class="card-body">
+                    <h5 class="card-title">Шафа 2</h5>
+                    <p class="card-text">Даний зразок є в доступі для замвлоняя.</p>
+                    <a href="#" class="btn btn-info" data-bs-toggle="modal"
+                        data-bs-target="#prodact-info-modal6">Інформація</a>
+                    <a href="#price" class="btn btn-primary">Розрахувати</a>
+                </div>
+            </article>
+            <!-- ш3 -->
+            <article class="card col-12 col-sm-6 col-md-4 col-lg-3">
+                <img src="{{ user_image7 }}" class="card-img-top" alt="Шафа 3">
+                <div class="card-body">
+                    <h5 class="card-title">Шафа 3</h5>
+                    <p class="card-text">Даний зразок є в доступі для замвлоняя.</p>
+                    <a href="#" class="btn btn-info" data-bs-toggle="modal"
+                        data-bs-target="#prodact-info-modal7">Інформація</a>
+                    <a href="#price" class="btn btn-primary">Розрахувати</a>
+                </div>
+            </article>
+            <!-- ш4 -->
+            <article class="card col-12 col-sm-6 col-md-4 col-lg-3">
+                <img src="{{ user_image8 }}" class="card-img-top" alt="Шафа 4">
+                <div class="card-body">
+                    <h5 class="card-title">Шафа 4</h5>
+                    <p class="card-text">Даний зразок є в доступі для замвлоняя.</p>
+                    <a href="#" class="btn btn-info" data-bs-toggle="modal"
+                        data-bs-target="#prodact-info-modal8">Інформація</a>
+                    <a href="#price" class="btn btn-primary">Розрахувати</a>
+                </div>
+            </article>
+        </div>
+
+
+        <!-- Modal -->
+        <!-- куня 1 -->
+        <div class="modal fade card-header" id="prodact-info-modal1" tabindex="-1"
+            aria-labelledby="prodact-info-modalLabel1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="prodact-info-modalLabel1">Опис</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Кухня 1</h5>
+                        <img class="d-block w-50 mx-auto" src="{{ user_image1 }}" alt="Кухня 1">
+                        <p>Фасад верх - фабований МДФ: глянець 19 мм , фасад низ - акріловий МДФ: 19 мм NEMAN, корпус -
+                            ЛДСП
+                            - 18 мм Egger, фурнітура - Blum, стільниця - 38 мм вологостіка ARPA(Italia)</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- куня 2 -->
+        <div class="modal fade card-header" id="prodact-info-modal2" tabindex="-1"
+            aria-labelledby="prodact-info-modalLabel2" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="prodact-info-modalLabel2">Опис</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Кухня 2</h5>
+                        <img class="d-block w-50 mx-auto" src="{{ user_image2 }}" alt="Кухня 2">
+                        <p>Фасад верх - фабований МДФ: матований 19 мм , матований 19 ммN, корпус - ЛДСП
+                            - 18 мм Egger, фурнітура - Muller, стільниця - 38 мм вологостіка Egger(Austria)</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- куня 3 -->
+        <div class="modal fade card-header" id="prodact-info-modal3" tabindex="-1"
+            aria-labelledby="prodact-info-modalLabel3" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="prodact-info-modalLabel3">Опис</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Кухня 3</h5>
+                        <img class="d-block w-50 mx-auto" src="{{ user_image3 }}" alt="Кухня 3">
+                        <p>Фасад верх - фабований МДФ: глянець 19 мм , фасад низ - акріловий МДФ: 19 мм NEMAN, корпус -
+                            ЛДСП
+                            - 18 мм Egger, фурнітура - Blum, стільниця - 38 мм вологостіка ARPA(Italia)</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- куня 4 -->
+        <div class="modal fade card-header" id="prodact-info-modal4" tabindex="-1"
+            aria-labelledby="prodact-info-modalLabel4" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="prodact-info-modalLabel4">Опис</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Кухня 3</h5>
+                        <img class="d-block w-50 mx-auto" src="{{ user_image4 }}" alt="Кухня 3">
+                        <p>Фасад верх - МДФ ПВХ: матовий 19 мм , фасад низ - МДФ ПВХ: бетон 19 мм , корпус -
+                            ЛДСП - 18 мм SwissKrono, фурнітура - Blum, стільниця - 38 мм LuxForm</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- шк1 -->
+        <div class="modal fade card-header" id="prodact-info-modal5" tabindex="-1"
+            aria-labelledby="prodact-info-modalLabel5" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="prodact-info-modalLabel5">Опис</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Шафа 1</h5>
+                        <img class="d-block w-50 mx-auto" src="{{ user_image5 }}" alt="Шафа 1">
+                        <p>Фасад ДВСП - 10 мм, система -Квадро, корпус -ЛДСП 18 мм Egger, фурнітура - Muller, тип -
+                            шафа-купе</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- шк2 -->
+        <div class="modal fade card-header" id="prodact-info-modal6" tabindex="-1"
+            aria-labelledby="prodact-info-modalLabel6" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="prodact-info-modalLabel6">Опис</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Шафа 2</h5>
+                        <img class="d-block w-50 mx-auto" src="{{ user_image6 }}" alt="Шафа 2">
+                        <p>Фасад и корпус -ЛДСП 18 мм Egger, фурнітура - Muller, тип - прихожая</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- шк3 -->
+        <div class="modal fade card-header" id="prodact-info-modal7" tabindex="-1"
+            aria-labelledby="prodact-info-modalLabel7" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="prodact-info-modalLabel7">Опис</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Шафа 3</h5>
+                        <img class="d-block w-50 mx-auto" src="{{ user_image7 }}" alt="Шафа 3">
+                        <p>Фасад крашенное стекло-брилиант, корпус -ЛДСП 18 мм Egger, фурнітура - Hetich (Германія), тип
+                            - шкафа-купе</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- шк4 -->
+        <div class="modal fade card-header" id="prodact-info-modal8" tabindex="-1"
+            aria-labelledby="prodact-info-modalLabel8" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="prodact-info-modalLabel8">Опис</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Шафа 4</h5>
+                        <img class="d-block w-50 mx-auto" src="{{ user_image8 }}" alt="Шафа 4">
+                        <p>Фасад зеркало, корпус -ЛДСП 18 мм Egger, фурнітура - Muller, тип - гардеробна кімната</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        </header>
+    </main>
+
+    <!-- Форма данних -->
+    <h2 id="price" class="word">Дізнатись попередню вартість</h2>
+    <form action="/answer" method="post" class="row g-3 needs-validation about_us" novalidate>
+        <h4>Дізнатись вартість за Вашими розмізами:</h4>
+        <div class="col-md-3">
+            <label for="validationCustom04" class="form-label">Вид меблів</label>
+            <select name="furniture" class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Оберіть</option>
+                <option>Шафа</option>
+                <option>Кухня</option>
+            </select>
+            <div class="invalid-feedback">
+                Please select a valid state.
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">Висота виробу, м</label>
+            <input name="height" type="number" class="form-control" placeholder="метрів" required min="2" max="4">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Довжина виробу, м</label>
+            <input name="long" type="number" class="form-control" placeholder="метрів" required min="1" max="20">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+
+        <div class="col-md-3">
+            <label for="validationCustom05" class="form-label">Номер обраного дизайну</label>
+            <input name="dising_number" type="number" class="form-control" id="validationCustom05" required min="1"
+                max="4">
+            <div class="invalid-feedback">
+                Please provide a valid zip.
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustomUsername" class="form-label">Введіть Ваш номер телефону</label>
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">Тел.:</span>
+                <!-- <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required> -->
+                <input name="phone" placeholder="+380ХХХХХХХХХ" type="string" class="form-control" required>
+                <div class="invalid-feedback">
+                    Please choose a username.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label for="validationCustom03" class="form-label">Ваше ім'я</label>
+            <input name="name" type="text" class="form-control" id="validationCustom03" placeholder="ім'я" required>
+            <div class="invalid-feedback">
+                Please provide a valid city.
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="form-check">
+                <input name="bools" class="form-check-input" type="checkbox" value="yes" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Розрахувати з монтажними роботами
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Відправити</button>
+        </div>
+    </form>
+
+
+
+    <footer>
+        <div class="card text-center about_us card-header">
+            <h2 id="сontacts">Ми чекаємо на Вас :)</h2>
+            <div class="card-header">
+                <h3>Наші зусилля забезпечують ваш комфорт!</h3>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Україна, м. Київ, бульвар Вацлава Гавела, б. 16</h5>
+                <h5 class="card-title">Мобільний: +380734728399</h5>
+                <h5 class="card-title"> Телеграм: <a href="https://t.me/Andrii_Haponov">@Andrii_Haponov</h5>
+            </div>
+
+
+            <div>
+                <!-- <img src="{{ user_image5 }}" class="card-img-top" width="500" height="295" alt="user photo"> -->
+                <!-- <img src="{{ user_image5 }}" class="img-fluid" alt="Photo"> -->
+                <img src="{{ user_image9 }}" class="img-thumbnail" alt="Photo">
+
+
+            </div>
+
+
+            <div>
+                <a href="/" class="btn btn-primary">Що там на початку</a>
+            </div>
+            <video w-50 mx-auto controls>
+                <source src=" static/images/Videokitch.mp4" type="video/mp4">
+            </video>
+            <source src=" static/images/Videokitch.mp4" type="video/mp4">
+            </video>
+            <div class="card-footer text-muted">
+                &#x24b8; 2022 August
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
